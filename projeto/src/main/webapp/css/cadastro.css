@@ -1,0 +1,471 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.login-body {
+    background: #e9e6e3;
+    min-height: 100vh;
+}
+
+/* CONTAINER */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 🔥 centraliza verticalmente */
+    gap: 80px;
+
+    min-height: 100vh;
+
+    padding: 40px;
+    max-width: 1300px;
+    margin: auto;
+
+    flex-wrap: wrap;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================= */
+/* LADO ESQUERDO */
+/* ========================= */
+
+.login-left {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    width: 100%;
+    max-width: 500px;
+
+    height: 100%; /* 🔥 importante */
+
+    animation: fadeUp 0.8s ease forwards;
+    
+}
+
+/* LOGO */
+.login-left .logo {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* TITULO */
+.login-left h1 {
+    font-size: 32px;
+    color: #5f6f65;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+/* SUBTITULO */
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+/* BENEFÍCIOS */
+.benefits {
+    list-style: none;
+    width: 100%;
+    max-width: 420px;
+}
+
+.benefits li {
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    font-size: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+
+    transition: 0.3s;
+}
+
+/* delay */
+.benefits li:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.benefits li:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.benefits li:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.benefits li:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.benefits li:hover {
+    transform: translateX(5px);
+}
+
+/* ========================= */
+/* FORMULÁRIO */
+/* ========================= */
+
+.login-box {
+    width: 100%;
+    max-width: 380px;
+
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+
+    padding: 35px;
+
+    border-radius: 30px;
+    border: 2px solid #5f6f65;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    animation: fadeUp 1s ease forwards;
+
+    transition: 0.3s;
+    
+}
+
+.login-box:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* TEXTOS */
+.login-box h2 {
+    margin-bottom: 5px;
+    color: #5f6f65;
+}
+
+.login-box p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 18px;
+}
+
+/* LABELS */
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+
+/* INPUTS */
+.input-group {
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #aaa;
+    border-radius: 25px;
+
+    padding: 10px 14px;
+    margin-bottom: 14px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+.input-group:focus-within {
+    border: 1px solid #5f6f65;
+
+    box-shadow: 0 0 8px rgba(95, 111, 101, 0.3);
+}
+
+.input-group img {
+    width: 18px;
+    margin: 0 5px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    flex: 1;
+
+    padding: 8px;
+
+    font-size: 14px;
+    background: transparent;
+}
+
+.eye {
+    cursor: pointer;
+}
+
+/* LINK */
+.forgot {
+    font-size: 12px;
+    display: block;
+    text-align: right;
+    margin-bottom: 18px;
+    color: #555;
+    text-decoration: none;
+}
+
+/* BOTÃO */
+.full {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.btn.primary {
+    background: #5f6f65;
+    color: white;
+
+    border-radius: 30px;
+
+    padding: 14px;
+
+    border: none;
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn.primary:hover {
+    background: #4e5c54;
+    transform: scale(1.02);
+}
+
+/* brilho */
+.btn.primary::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+
+    transition: 0.5s;
+}
+
+.btn.primary:hover::after {
+    left: 100%;
+}
+
+/* DIVISOR */
+.divider {
+    font-size: 12px;
+    margin: 18px 0;
+    position: relative;
+    color: #777;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    height: 1px;
+    width: 40%;
+
+    background: #ccc;
+
+    position: absolute;
+    top: 50%;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* SOCIAL */
+.social {
+    display: flex;
+    gap: 12px;
+}
+
+.social button {
+    flex: 1;
+
+    padding: 12px;
+
+    border-radius: 14px;
+    border: 1px solid #999;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.social button:hover {
+    transform: scale(1.03);
+}
+
+.social img {
+    width: 18px;
+}
+
+/* LINK FINAL */
+.signup {
+    font-size: 12px;
+    margin-top: 14px;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 992px) {
+
+    .login-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        padding: 30px 20px;
+            align-items: stretch;
+
+    }
+
+    .login-left {
+        max-width: 100%;
+    }
+
+    .login-left .logo {
+        width: 220px;
+    }
+
+    .login-left h1 {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .benefits {
+        max-width: 100%;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+/* CELULARES */
+@media (max-width: 600px) {
+
+    .login-container {
+        padding: 20px 15px;
+        gap: 25px;
+    }
+
+    .login-left .logo {
+        width: 180px;
+        display: none;
+    }
+
+    .login-left h1 {
+        font-size: 24px;
+        display: none;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+        display: none;
+    }
+
+    .benefits li {
+        font-size: 14px;
+        padding: 12px;
+        display: none;
+    }
+
+    .login-box {
+        padding: 25px 20px;
+        border-radius: 25px;
+    }
+
+    .login-box h2 {
+        font-size: 24px;
+    }
+
+    .login-box p {
+        font-size: 14px;
+    }
+
+    .input-group {
+        padding: 10px 12px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    .social {
+        flex-direction: column;
+    }
+
+    .social button {
+        width: 100%;
+    }
+
+    .btn.primary {
+        padding: 13px;
+    }
+}
