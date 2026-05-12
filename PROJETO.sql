@@ -1,0 +1,32 @@
+CREATE DATABASE PROJETO;
+
+USE PROJETO;
+
+CREATE TABLE usuarios;
+
+CREATE TABLE usuarios (
+
+    id INT PRIMARY KEY AUTO_INCREMENT,
+
+    nome VARCHAR(100) NOT NULL,
+
+    email VARCHAR(150) NOT NULL UNIQUE,
+
+    senha VARCHAR(255) NOT NULL,
+
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    foto LONGBLOB,
+
+    bio VARCHAR(255),
+
+    curso VARCHAR(100),
+
+    telefone VARCHAR(20)
+
+);
+USE USUARIOS;
+
+SELECT * FROM usuarios;
+SET GLOBAL max_allowed_packet = 67108864;
+SHOW VARIABLES LIKE 'max_allowed_packet';
