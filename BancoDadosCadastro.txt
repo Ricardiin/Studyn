@@ -1,0 +1,32 @@
+
+/* ----- Atualizado */
+
+CREATE DATABASE projeto;
+
+USE projeto;
+
+CREATE TABLE cadastro (
+
+    id INT PRIMARY KEY AUTO_INCREMENT,
+
+    nome VARCHAR(150) NOT NULL,
+
+    email VARCHAR(200) NOT NULL UNIQUE,
+
+    senha VARCHAR(255) NOT NULL,
+
+    nascimento DATE,
+
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    foto LONGBLOB
+);
+
+select * from cadastro;
+
+truncate table cadastro;
+drop table cadastro;
+SET GLOBAL max_allowed_packet = 67108864;
+SHOW VARIABLES LIKE 'max_allowed_packet';
+
+SHOW FULL PROCESSLIST;
